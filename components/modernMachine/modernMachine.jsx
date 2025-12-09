@@ -8,6 +8,7 @@ import Phygital1 from "../../public/home/phygital1.jpg";
 import drone_spray_new from "../../public/home/Drone_new.jpg";
 import ModernFarmMachinery_new from "../../public/home/ModernFarmMachinery_new.jpg";
 import Services_We_Provide from "../../public/home/Services_We_Provide.jpg";
+import Green_Agrimall_Services from "../../public/home/Green_Agrimall_Services.webp";
 import products_new from "../../public/home/products_new.jpg";
 
 // import Title from "../Title";
@@ -31,6 +32,7 @@ const About = () => {
     <div id="concept">
       <ImgOverlay
         image={Services_We_Provide}
+        // image={Green_Agrimall_Services}
         height="100%"
         titlePartOne={
           <span
@@ -52,6 +54,20 @@ const About = () => {
         }
         style={{ objectFit: "cover" }}
       />
+
+      <Container>
+        <img
+          style={{
+            width: "100%",
+            borderRadius: "10px",
+            marginTop: "40px",
+            marginBottom: "40px",
+          }}
+          className="mb-0"
+          src={Green_Agrimall_Services}
+          alt="Green Agrimall Services"
+        />
+      </Container>
 
       <Box id="">
         <Container className="mt-5">
@@ -154,9 +170,8 @@ const About = () => {
               />
             </Col>
           </Row>
-
           <Row className="align-items-center ">
-            <Col md={8} lg={8}  className="order-2 order-md-1">
+            <Col md={8} lg={8} className="order-2 order-md-1">
               <img
                 style={{ width: "100%", borderRadius: "10px" }}
                 className="mb-0"
@@ -164,7 +179,7 @@ const About = () => {
                 alt="Main"
               />
             </Col>
-            <Col md={4} lg={4}  className="order-1 order-md-2">
+            <Col md={4} lg={4} className="order-1 order-md-2">
               <Typography
                 fontFamily="Arial"
                 style={{

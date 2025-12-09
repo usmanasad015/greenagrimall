@@ -8,11 +8,59 @@
     box-shadow: none !important;
     user-select: text !important;
 
-    
+
 }
 
-/* Additionally, to remove any other Material-UI default hover effects, you might need */
 .disable-ripple * {
     user-select: text !important;
     /* Ensure all nested elements allow text selection */
+}
+
+
+/* In Gallery - Change Swiper navigation arrows color*/
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+}
+
+.agri-logo-wrapper {
+    width: 260px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .agri-logo-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 120px;
+        height: 150px;
+    }
+}
+
+.gallery-background-image {
+    background-image: url('/gallery_bg.jpeg');
+    /* background-image: url('/agrimall_onlylogo.png'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .gallery-background-image {
+        background-image: none;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .gallery-background {
+        background-image: none;
+    }
 }

@@ -1,29 +1,51 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import React, { lazy, Suspense } from "react";
-import BANNER_1 from "../../public/slider/ (1).webp";
-import BANNER_3 from "../../public/slider/ (3).webp";
-import BANNER_4 from "../../public/slider/ (4).webp";
-import BANNER_5 from "../../public/slider/ (5).webp";
-import BANNER_6 from "../../public/slider/ (6).webp";
-import agri_mall_logo_landing from "../../public/Eng_Logo_without_background.png";
+
+// import BANNER_1 from "../../public/slider/new_hbanner_1.jpeg";
+// import BANNER_3 from "../../public/slider/new_hbanner_2.jpeg";
+// import BANNER_4 from "../../public/slider/new_hbanner_3.jpeg";
+// import BANNER_5 from "../../public/slider/new_hbanner_4.jpeg";
+// import BANNER_6 from "../../public/slider/new_hbanner_5.jpeg";
+// import BANNER_7 from "../../public/slider/webBanner10.jpg";
+// import BANNER_8 from "../../public/slider/webBanner11.jpg";
+
+// New header images
+import BANNER_1 from "../../public/slider/Header_site_Image_with_Plate.jpg";
+import BANNER_3 from "../../public/slider/pump_logo.jpeg";
+import BANNER_4 from "../../public/slider/Pump.jpeg";
+import BANNER_5 from "../../public/slider/Racks_1.jpg";
+import BANNER_6 from "../../public/slider/racks_2.jpg";
+import BANNER_7 from "../../public/slider/training_center.jpeg";
+
+import agri_mall_logo_landing_white from "../../public/White_Logo_GAM.png";
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Typography } from "@mui/material";
-import { FacebookOutlined, LinkedIn } from "@mui/icons-material";
-// import { createTheme } from "@mui/material/styles";
-// import BANNER_11 from '../../public/slider/(1).jpeg';
-// import agri from "../../public/4bAgri.png";
-// import agri_mall_logo_landing from "../../public/agri_mall_logo_landing.png";
-// import BANNER_2 from "../../public/slider/ (2).webp";
+import {
+  FacebookOutlined,
+  LinkedIn,
+  YouTube,
+  Instagram,
+} from "@mui/icons-material";
 
 const useStyles = makeStyles(() => ({
+  carousel: {
+    "& .slide": {
+      transitionDuration: "5s !important",
+    },
+    "& .carousel-slider": {
+      transition: "transform 12s ease-in-out !important",
+    },
+  },
+
   imageCover: {
     width: "-webkit-fill-available",
-    height: "auto", // Maintains aspect ratio
+    height: "auto",
   },
   root: {
     position: "relative",
@@ -38,7 +60,7 @@ const useStyles = makeStyles(() => ({
   },
 
   animatedImages: {
-    animation: "$kenburns 60s ease infinite",
+    animation: "$kenburns 20s ease infinite",
     animationIterationCount: "infinite",
     WebkitAnimationDelay: "0s",
     animationDelay: "0s",
@@ -106,6 +128,7 @@ const useStyles = makeStyles(() => ({
       width: "85%",
     },
   },
+
   title: {
     fontFamily: "'Arial', Helvetica, Arial, sans-serif !important",
     fontSize: "40px",
@@ -174,6 +197,7 @@ export default function CustomCarousel() {
           showStatus={false}
           className={classes.carousel}
           interval={4000}
+          transitionTime={1000}
           onChange={handleSlideChange}
         >
           <div>
@@ -248,6 +272,22 @@ export default function CustomCarousel() {
               className={`${classes.image} ${selectedSlide === 5 ? classes.animatedImages : ""}`}
             />
           </div>
+
+          <div>
+            <img
+              alt=""
+              src={BANNER_7}
+              className={`${classes.image} ${selectedSlide === 6 ? classes.animatedImages : ""}`}
+            />
+          </div>
+          {/* <div>
+            <img
+              alt=""
+              src={BANNER_8}
+              className={`${classes.image} ${selectedSlide === 7 ? classes.animatedImages : ""}`}
+            />
+          </div> */}
+
           {/* <div>
             <img
               alt=""
@@ -288,12 +328,50 @@ export default function CustomCarousel() {
               height="32"
               viewBox="0 0 32 32"
               fill="none"
-              // onClick={redirectToFB}
               xmlns="http://www.w3.org/2000/svg"
               cursor={"pointer"}
               style={{ color: "white" }}
             >
               <FacebookOutlined />
+            </svg>
+          </a>
+
+          <br />
+
+          <a
+            href="https://www.youtube.com/@greenagrimallpk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              cursor={"pointer"}
+              style={{ color: "white" }}
+            >
+              <YouTube />
+            </svg>
+          </a>
+          <br />
+
+          <a
+            href="https://www.instagram.com/greenagrimall.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              cursor={"pointer"}
+              style={{ color: "white" }}
+            >
+              <Instagram />
             </svg>
           </a>
 
@@ -319,7 +397,8 @@ export default function CustomCarousel() {
         <Box className={classes.titleContainer}>
           <Box
             component="img"
-            src={agri_mall_logo_landing}
+            // src={agri_mall_logo_landing}
+            srcSet={agri_mall_logo_landing_white}
             alt="Agri Mall Logo"
             className={classes.imageCover}
             style={{
@@ -342,16 +421,19 @@ export default function CustomCarousel() {
             </span>
           </h1> */}
           <Typography
-            variant="h7"
+            variant="h5"
             ml={20}
             className={classes.description}
-            style={{
-              fontFamily: "'Arial'",
+            sx={{
+              fontFamily: "Arial",
+              fontSize: {
+                xs: "14px", // mobile
+                sm: "20px", // tablet
+                md: "24px", // desktop
+              },
             }}
           >
-            A vision to revolutionize, Pakistan’s agriculture landscape and
-            maximize <br />
-            agriculture output to its true potential
+            Transforming Agriculture - Empowering Farmers
           </Typography>
 
           {/* <Button className={classes.button}>

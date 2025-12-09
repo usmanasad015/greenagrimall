@@ -13,17 +13,9 @@ import phase2 from "../../public/growthSection/Phase2.png";
 import phase3 from "../../public/growthSection/Phase3.png";
 import "../../src/index.css";
 import Growth_Plan from "../../public/home/Growth_Plan.jpg";
-// import CardContent from "@mui/material/CardContent";
-// import CardMedia from "@mui/material/CardMedia";
-// import { CardActionArea } from "@mui/material";
-// import History from "../../public/about/History.webp";
-// import Card from "../customCards/CustomCards";
-// import growth_image1 from "../../public/home/growth_image1.webp";
-// import Title from "../Title";
-// import useWindowDimensions from "../hooks/useWindowDimensions";
-// import tractor from "../../public/tractor.png";
-// import growthImage from "../../public/growthImage.png";
-// import AboutImage from "../../public/about/Sky_Closeup_Ear_botany_501921_3840x2400.webp";
+
+// ✅ Import the new component
+import PartneringSection from "../../components/growthPlan/PartneringSection";
 
 const growthPlan = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -55,20 +47,12 @@ const growthPlan = () => {
         image={Growth_Plan}
         height={"100px"}
         titlePartOne={
-          <span
-            style={{
-              fontFamily: "'Arial', Helvetica, Arial, sans-serif",
-            }}
-          >
+          <span style={{ fontFamily: "'Arial', Helvetica, Arial, sans-serif" }}>
             Growth
           </span>
         }
         titlePartTwo={
-          <span
-            style={{
-              fontFamily: "'Arial', Helvetica, Arial, sans-serif",
-            }}
-          >
+          <span style={{ fontFamily: "'Arial', Helvetica, Arial, sans-serif" }}>
             Plan
           </span>
         }
@@ -76,43 +60,70 @@ const growthPlan = () => {
 
       <Box>
         <Container style={containerStyle} className="my-5">
+          {/* Card 1 */}
           <Card style={cardStyle}>
             <CardActionArea style={cardActionAreaStyle} disableRipple>
-              <CardMedia
-                component="img"
-                height="140"
-                image={phase1}
-                alt="Mega Green Agrimall"
-              />
+              <div
+                style={{
+                  height: "140px",
+                  backgroundColor: "#2E7D32", // dark green
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "4px",
+                  color: "#ffffff",
+                  textAlign: "center",
+                  padding: "0 10px",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  fontFamily="Arial"
+                  fontWeight="bold"
+                  fontSize="1.2rem"
+                >
+                  GAM – Inauguration
+                </Typography>
+              </div>
+
               <CardContent style={cardContentStyle}>
+                {/* Card subheading */}
                 <Typography
                   variant="h5"
                   fontFamily="Arial"
                   fontSize="1.2rem"
                   fontWeight="bold"
+                  gutterBottom
                 >
                   Mega Green Agrimall at Marot, Cholistan
                 </Typography>
+
+                {/* Card details */}
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   fontFamily="Arial"
                   fontSize="1rem"
-                  component="div" 
+                  component="div"
                 >
                   <ul style={{ lineHeight: "1.8", marginTop: "10px" }}>
                     <li>
-                      The site will be ready by the end of May, providing modern
-                      facilities to support local agriculture.
+                      Inaugurated by Honorable{" "}
+                      <b>Chief Minister Punjab Ms. Maryam Nawaz Sharif</b> &{" "}
+                      <b>
+                        Chief of Army Staff (COAS) General Syed Asim Munir,
+                        NI(M)
+                      </b>{" "}
+                      on 14-02-2025
                     </li>
                     <li>
-                      The inauguration is expected in July, featuring tours,
-                      speeches, and showcasing innovative agricultural solutions.
+                      This milestone marks the beginning of a new era in
+                      Pakistan's agricultural sector
                     </li>
                     <li>
-                      Business activities will commence next week, creating a
-                      hub for trading, networking, and accessing agricultural
-                      supplies.
+                      Business activities have started 14-02-25, creating a hub
+                      for trading, networking, and accessing agricultural
+                      supplies
                     </li>
                   </ul>
                 </Typography>
@@ -120,14 +131,31 @@ const growthPlan = () => {
             </CardActionArea>
           </Card>
 
+          {/* Card 2 */}
           <Card style={cardStyle}>
             <CardActionArea style={cardActionAreaStyle} disableRipple>
-              <CardMedia
-                component="img"
-                height="140"
-                image={phase2}
-                alt="Green Agrimall Boost Punjab Agriculture"
-              />
+              <div
+                style={{
+                  height: "140px",
+                  backgroundColor: "#2E7D32", // dark green
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "4px",
+                  color: "#ffffff",
+                  textAlign: "center",
+                  padding: "0 10px",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  fontFamily="Arial"
+                  fontWeight="bold"
+                  fontSize="1.2rem"
+                >
+                  2025
+                </Typography>
+              </div>
               <CardContent style={cardContentStyle}>
                 <Typography
                   variant="h5"
@@ -135,25 +163,35 @@ const growthPlan = () => {
                   fontSize="1.2rem"
                   fontWeight="bold"
                 >
-                  Green Agrimall Boost Punjab Agriculture
+                  Green Agrimall in all provinces including Gilgit Baltistan and
+                  Azad Jammu Kashmir
                 </Typography>
+
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   fontFamily="Arial"
                   fontSize="1rem"
-                  component="div" 
+                  component="div"
                 >
-                  <ul style={{ lineHeight: "1.8", marginTop: "10px" }}>
-                    <li>We are launching 25 new sites across Punjab.</li>
-                    <li>
-                      Each site will be managed and operated under the Green
-                      Agrimall brand.
+                  <ul style={{ marginTop: "10px" }}>
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      29 GAM Sites in Punjab
                     </li>
-                    <li>
-                      These sites will offer advanced resources and services to
-                      boost agricultural productivity and sustainability in
-                      various regions.
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      3 GAM Sites in Sindh
+                    </li>
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      1 GAM Site in Balochistan
+                    </li>
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      1 GAM Site in KPK
+                    </li>
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      1 GAM Site in GB
+                    </li>
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      1 GAM Site in AJK
                     </li>
                   </ul>
                 </Typography>
@@ -161,14 +199,31 @@ const growthPlan = () => {
             </CardActionArea>
           </Card>
 
+          {/* Card 3 */}
           <Card style={cardStyle}>
             <CardActionArea style={cardActionAreaStyle} disableRipple>
-              <CardMedia
-                component="img"
-                height="140"
-                image={phase3}
-                alt="Mega Sites Transform Agriculture"
-              />
+              <div
+                style={{
+                  height: "140px",
+                  backgroundColor: "#2E7D32", // dark green
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "4px",
+                  color: "#ffffff",
+                  textAlign: "center",
+                  padding: "0 10px",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  fontFamily="Arial"
+                  fontWeight="bold"
+                  fontSize="1.2rem"
+                >
+                  2026
+                </Typography>
+              </div>
               <CardContent style={cardContentStyle}>
                 <Typography
                   variant="h5"
@@ -183,23 +238,17 @@ const growthPlan = () => {
                   color="text.secondary"
                   fontFamily="Arial"
                   fontSize="1rem"
-                  component="div" 
+                  component="div"
                 >
-                  <ul style={{ lineHeight: "1.8", marginTop: "10px" }}>
-                    <li>
-                      The ambitious rollout of multiple new mega sites
-                      (&gt;250) signifies a monumental leap forward in
-                      agricultural development.
+                  <ul style={{ marginTop: "10px" }}>
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      Expansion Plan 2025 – “50+ sites”
                     </li>
-                    <li>
-                      These sites, each exceeding 250 acres in size, represent a
-                      bold endeavor to transform the agricultural landscape.
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      Expansion Plan 2026 – “250+ sites”
                     </li>
-                    <li>
-                      With state-of-the-art infrastructure and cutting-edge
-                      technology, they promise to revolutionize farming
-                      practices, enhance productivity, and ensure
-                      sustainability.
+                    <li style={{ marginBottom: "10px", lineHeight: "1.9" }}>
+                      Expansion 2027 onwards – “100+ sites annually”
                     </li>
                   </ul>
                 </Typography>
@@ -208,6 +257,9 @@ const growthPlan = () => {
           </Card>
         </Container>
       </Box>
+
+      {/* ✅ Use the new section here */}
+      <PartneringSection />
     </div>
   );
 };

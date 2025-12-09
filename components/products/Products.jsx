@@ -5,10 +5,14 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 import ProductsImg from "../../public/home/Products.jpg";
 import insecticide from "../../public/Icons/insecticides.webp";
 import herbicide from "../../public/Icons/herbicides.webp";
+import Fuel_Service_icon from "../../public/Icons/Fuel_Service_icon.png";
+
 import fungicide from "../../public/Icons/fungicides.webp";
 import seed from "../../public/Icons/seed.webp";
 import tractor_animated from "../../public/tractor_animated.png";
+import WandaCattleFeed from "../../src/assets/icons/Wanda-Cattle-Feed.png";
 import ProductCategory from "./ProductCategory";
+
 // import { LocalActivity } from "@mui/icons-material";
 // import micron from "../../public/Icons/micronutrients.webp";
 // import { enqueueSnackbar } from "notistack";
@@ -16,6 +20,11 @@ import ProductCategory from "./ProductCategory";
 // import productImage from "../../public/slider/ (3).webp";
 
 const Products = () => {
+  const agriLoaningLogos = [
+    "/logos/bank_logos/bank1.png",
+    "/logos/bank_logos/bank2.jpg",
+  ];
+
   const { width } = useWindowDimensions();
 
   return (
@@ -23,7 +32,11 @@ const Products = () => {
       <ImgOverlay
         image={ProductsImg}
         height="300px"
-        titlePartOne={<span style={{ fontFamily: "'Arial', Helvetica, Arial, sans-serif" }}>PRODUCTS</span>}
+        titlePartOne={
+          <span style={{ fontFamily: "'Arial', Helvetica, Arial, sans-serif" }}>
+            PRODUCTS
+          </span>
+        }
         titlePartTwo=""
         fontFamily="Arial"
       />
@@ -50,8 +63,7 @@ const Products = () => {
               title={
                 <span
                   style={{
-                    fontFamily:
-                      "'Arial', Helvetica, Arial, sans-serif",
+                    fontFamily: "'Arial', Helvetica, Arial, sans-serif",
                   }}
                 >
                   Seeds
@@ -64,8 +76,7 @@ const Products = () => {
               title={
                 <span
                   style={{
-                    fontFamily:
-                      "'Arial', Helvetica, Arial, sans-serif",
+                    fontFamily: "'Arial', Helvetica, Arial, sans-serif",
                   }}
                 >
                   Pesticides
@@ -78,8 +89,7 @@ const Products = () => {
               title={
                 <span
                   style={{
-                    fontFamily:
-                      "'Arial', Helvetica, Arial, sans-serif",
+                    fontFamily: "'Arial', Helvetica, Arial, sans-serif",
                   }}
                 >
                   Fertilizers
@@ -88,26 +98,30 @@ const Products = () => {
               id={4}
             />
             <ProductCategory
-              icon={tractor_animated}
+              icon={WandaCattleFeed}
               title={
                 <span
                   style={{
-                    fontFamily:
-                      "'Arial', Helvetica, Arial, sans-serif",
+                    width: "100px",
+                    height: "30px",
+                    objectFit: "contain",
+                    // marginBottom: "10px",
+                    backgroundColor: "#fff", 
+                    display: "block",
                   }}
                 >
-                  Equipments
+                  Wanda
                 </span>
               }
               id={5}
             />
+
             <ProductCategory
               icon={fungicide}
               title={
                 <span
                   style={{
-                    fontFamily:
-                      "'Arial', Helvetica, Arial, sans-serif",
+                    fontFamily: "'Arial', Helvetica, Arial, sans-serif",
                   }}
                 >
                   Fungicides
@@ -115,10 +129,26 @@ const Products = () => {
               }
               id={2}
             />
+
+              <ProductCategory
+              icon={Fuel_Service_icon}
+              title={
+                <span
+                  style={{
+                    fontFamily: "'Arial', Helvetica, Arial, sans-serif",
+                  }}
+                >
+                  Fuel Serv
+                </span>
+              }
+              id={3}
+            />
+            
+
+            
           </Grid>
 
-         
-          <Grid item xs={12} md={width < 1800 ? 10 : 7}>
+          {/* <Grid item xs={12} md={width < 1800 ? 10 : 7}>
             <Stack
               direction="row-reverse"
               alignItems="center"
@@ -126,7 +156,7 @@ const Products = () => {
               mb={2}
               mt={2}
             ></Stack>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </div>

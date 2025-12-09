@@ -58,9 +58,15 @@ const ProductCategory = ({ icon, title, id }) => {
         <CardContent>
           <img
             src={icon}
-            width={"70px"}
-            style={{ marginRight: "10px", marginTop: "1px" }}
+            alt="icon"
+            style={{
+              width: "100px", // Set consistent width
+              height: "80px", // Set consistent height
+              objectFit: "contain", // Maintain aspect ratio
+              // marginBottom: "10px",
+            }}
           />
+
           <Typography
             gutterBottom
             variant="h5"

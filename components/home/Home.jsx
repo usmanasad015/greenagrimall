@@ -46,10 +46,12 @@ const Home = () => {
       <Header home={true} />
       <CustomCarousel />
       <Box></Box>
-      <Concept />
+      <About id="about" />
+      {/* <Concept /> */}
       <ModernMachine />
       <Services />
-      <About id="about" />
+      {/* <About id="about" /> */}
+      <Concept />
       <GrowthPlan />
       <Products id="products" />
       <ScrollToTop />

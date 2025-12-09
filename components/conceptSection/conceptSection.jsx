@@ -1,7 +1,8 @@
 import ImgOverlay from "../imageOverlay/ImageOverlay";
 import { Box, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/material";
-import mainImage from "../../public/conceptSection/mainImage.png";
+// import mainImage from "../../public/conceptSection/mainImage.png";
+import conceptImage from "../../public/conceptSection/conceptImage.jpg";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -29,9 +30,9 @@ const About = () => {
           <Row className="align-items-center">
             <Col md={8} lg={8}>
               <img
-                style={{ width: "100%" }}
-                className="mb-0"
-                src={mainImage}
+                style={{ width: "100%" , borderRadius: "10px" }}
+                className="mb-3 mb-md-0"
+                src={conceptImage}
                 alt="Main"
               />
             </Col>
